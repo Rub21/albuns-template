@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { AppBar, Toolbar, withStyles } from '@material-ui/core';
-import Login from './login';
+import Login from '../containers/Login';
 import Typography from '@material-ui/core/Typography';
 class AppNav extends Component {
   render() {
     return (
       <div>
         <AppBar position="static">
-          <Toolbar>
+          <Toolbar className={this.props.classes.nav}>
             <Typography
               variant="h5"
               component="h1"
@@ -23,5 +23,6 @@ class AppNav extends Component {
   }
 }
 export default withStyles({
-  grow: { flexGrow: 1, textAlign: 'left' }
+  grow: { flexGrow: 1, textAlign: 'left' },
+  nav: { color: 'white' }
 })(AppNav);
