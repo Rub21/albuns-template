@@ -22,3 +22,15 @@ export const clearUser = () => {
     type: 'SIGN_OUT'
   };
 };
+
+export const setAlbums = albums => {
+  return {
+    type: 'SET_ALBUMS',
+    albums: albums
+  };
+};
+export const clearAlbums = () => {
+  return {
+    type: 'CLEAR_ALBUMS'
+  };
+};

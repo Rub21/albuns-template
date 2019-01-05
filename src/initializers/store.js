@@ -23,12 +23,24 @@ function userReducer(state = null, action) {
   }
 }
 
+function albumsReducer(state = [], action) {
+  switch (action.type) {
+    case 'SET_ALBUMS':
+      return action.albums;
+    case 'CLEAR_ALBUMS':
+      return null;
+    default:
+      return state;
+  }
+}
+
 /**
  * A traves de estos valores se va a acceder a los valores
  */
 let rootReducer = combineReducers({
   token: tokenReducer,
-  user: userReducer
+  user: userReducer,
+  albums: albumsReducer
 });
 /**
  * persistState: gurada todos los valores, devemos poner solo lo necesario
